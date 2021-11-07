@@ -1,0 +1,16 @@
+.header {
+  background-color: pink;
+}
+
+.navbar {
+  display: flex;
+  padding: 15px;
+}
+
+.navbar > a:not(:first) {
+  margin-left: 10px;
+}
+
+.footer {
+  padding: 15px;
+}
