@@ -1,0 +1,56 @@
+.header {
+  padding: 15%;
+  color: white;
+  position: relative;
+}
+
+.header.medium {
+  height: 640px;
+}
+
+.header.large {
+  height: 100vh;
+}
+
+.header.small {
+  height: 260px;
+  background-position: bottom;
+}
+
+.bg {
+  content: '';
+  background-color: lavender;
+  background-size: cover;
+  background-position: inherit;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.bg.flipped {
+  transform: scaleX(-1);
+}
+
+.bg_overlay {
+  content: '';
+  background-color: rgba(255, 192, 203, 0.499);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.header_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+}
+
+.header_buttons {
+  display: flex;
+  gap: 20px;
+}

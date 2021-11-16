@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react'
-import Link from 'next/link'
 import { getAllProducts } from '../lib/api'
 import Product from './product'
 
 const fakeProducts = [
-  {id: 1, name: 'Sample Product 1', description: 'Lorem impsum dalor consit'},
-  {id: 2, name: 'Sample Product 2', description: 'Lorem impsum dalor consit'},
-  {id: 3, name: 'Sample Product 3', description: 'Lorem impsum dalor consit'},
-  {id: 4, name: 'Sample Product 4', description: 'Lorem impsum dalor consit'}
+  {id: 1, name: 'Sample Product 1', shortDescription: 'Lorem impsum dalor consit'},
+  {id: 2, name: 'Sample Product 2', shortDescription: 'Lorem impsum dalor consit'},
+  {id: 3, name: 'Sample Product 3', shortDescription: 'Lorem impsum dalor consit'},
+  {id: 4, name: 'Sample Product 4', shortDescription: 'Lorem impsum dalor consit'}
 ]
 
 const Products = ({ search, tags, excludeTags, limit }) => {
@@ -43,9 +42,9 @@ const Products = ({ search, tags, excludeTags, limit }) => {
   })
 
   return (
-    <div className="products" style={{display: 'flex', justifyContent: 'space-evenly'}}>
+    <>
       {products}
-    </div>
+    </>
   )
 }
 

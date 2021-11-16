@@ -1,0 +1,15 @@
+.header_bg {
+  background-image: url(/photo-1583316174775-bd6dc0e9f298.webp);
+}
+
+.products_grid {
+  display: grid;
+  justify-content: center;
+}
+
+@media (min-width: 720px) {
+  .products_grid {
+    grid-template-columns: repeat(auto-fill, 300px);
+    grid-auto-rows: 480px;
+  }
+}

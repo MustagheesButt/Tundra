@@ -1,0 +1,15 @@
+.cart_drawer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(150, 230, 250, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  width: 70%;
+  z-index: 1;
+}

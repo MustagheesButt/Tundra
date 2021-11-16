@@ -1,13 +1,16 @@
-import Image from "next/image"
+import { useRouter } from "next/router"
+
 import Layout from "../../components/layout"
 import { getAllProducts, getProduct } from "../../lib/api"
 
 const Product = ({ product }) => {
+  const router = useRouter()
+
   return (
     <Layout title={`${product.name} &mdash; Tundra`}>
       <section>
         <div>
-          {product.image ? <Image src={product.image.sourceUrl} width='480' height='320' /> : ''}
+          {product.image ? <img src={product.image.sourceUrl} width='480' height='320' /> : ''}
         </div>
         <div>
           <h1>{product.name}</h1>
@@ -24,7 +27,7 @@ export async function getStaticPaths() {
 
   const paths = products.nodes.map(p => ({ params: { slug: p.slug } }))
 
-  return { paths, fallback: true }
+  return { paths, fallback: false }
 }
 
 export async function getStaticProps({ params }) {

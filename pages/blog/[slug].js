@@ -1,7 +1,14 @@
+import { useRouter } from "next/router"
+
 import Layout from "../../components/layout"
 import { getAllPostsWithSlug, getPostAndMorePosts } from "../../lib/api"
 
 const Post = ({ post }) => {
+  const router = useRouter()
+
+  // if (router.isFallback)
+  //   return <h1>Loading</h1>
+
   return (
     <Layout title={`${post.title} &mdash; Tundra`}>
       <h1>{post.title} <small>by {post.author.node.email}</small></h1>
@@ -15,7 +22,7 @@ export async function getStaticPaths() {
 
   const paths = posts.edges.map(p => ({ params: { slug: p.node.slug } }))
 
-  return { paths, fallback: true }
+  return { paths, fallback: false }
 }
 
 export async function getStaticProps({ params }) {

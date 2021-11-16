@@ -5,7 +5,7 @@ import { AppContext } from "../lib/AppContext"
 import { parseCurrency } from "../lib/util"
 
 const Checkout = () => {
-  const [cart] = useContext(AppContext)
+  const { cart } = useContext(AppContext)
 
   return (
     <Layout>
@@ -53,9 +53,9 @@ const Checkout = () => {
             <tbody>
               {Object.values(cart).map(c => {
                 return (
-                  <tr key={c.product.id}>
-                    <td>{c.product.name} &times; {c.quantity}</td>
-                    <td>{parseCurrency(c.product.price) * c.quantity}</td>
+                  <tr key={c.product.node.id}>
+                    <td>{c.product.node.name} &times; {c.quantity}</td>
+                    <td>{parseCurrency(c.product.node.price) * c.quantity}</td>
                   </tr>
                 )
               })}

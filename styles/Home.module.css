@@ -1,6 +1,10 @@
-.jumbotron {
-  height: 640px;
-  background-size: cover;
-  padding: 15%;
-  color: white;
+.header_bg {
+  background-image: url(/pexels-vinicius-wiesehofer-1090387-mobile.webp);
+  background-position: center;
+}
+
+@media (min-width: 720px) {
+  .header_bg {
+    background-image: url(/pexels-vinicius-wiesehofer-1090387-1080.webp);
+  }
 }
